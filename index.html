@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UALAND3</title>
+    <title>Test de Pájaro</title>
     <style>
         * {
             margin: 0;
@@ -67,7 +67,28 @@
             color: white;
             text-shadow: 3px 3px 10px black;
             opacity: 0;
+            margin-top: 40px; /* Aumenta la separación entre el botón y el mensaje */
             animation: fadeIn 1.5s ease-in-out forwards, zoom 1.5s ease-in-out;
+        }
+
+        .instagram {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .instagram a {
+            text-decoration: none;
+        }
+
+        .instagram img {
+            width: 40px;
+            height: 40px;
+            transition: 0.3s;
+        }
+
+        .instagram img:hover {
+            transform: scale(1.2);
         }
 
         @keyframes fadeIn {
@@ -98,6 +119,11 @@
                 font-size: 1em;
                 padding: 12px;
             }
+
+            .instagram img {
+                width: 35px;
+                height: 35px;
+            }
         }
     </style>
 </head>
@@ -107,6 +133,13 @@
         <h1>Hola, ¿quieres saber qué tan pájaro eres?</h1>
         <button onclick="mostrarResultado()">QUIERO SABER</button>
         <div id="resultado" class="hidden result">WAOOO, ERES 100% PÁJARO</div>
+        
+        <!-- Ícono de Instagram -->
+        <div class="instagram">
+            <a href="https://www.instagram.com/jandepr" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+            </a>
+        </div>
     </div>
 
     <script>

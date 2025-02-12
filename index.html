@@ -67,28 +67,8 @@
             color: white;
             text-shadow: 3px 3px 10px black;
             opacity: 0;
-            margin-top: 40px; /* Aumenta la separación entre el botón y el mensaje */
+            margin-top: 40px;
             animation: fadeIn 1.5s ease-in-out forwards, zoom 1.5s ease-in-out;
-        }
-
-        .instagram {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .instagram a {
-            text-decoration: none;
-        }
-
-        .instagram img {
-            width: 40px;
-            height: 40px;
-            transition: 0.3s;
-        }
-
-        .instagram img:hover {
-            transform: scale(1.2);
         }
 
         @keyframes fadeIn {
@@ -106,6 +86,28 @@
             to { opacity: 0; }
         }
 
+        /* Ícono de Instagram */
+        .instagram {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .instagram a {
+            text-decoration: none;
+        }
+
+        .instagram img {
+            width: 50px;
+            height: 50px;
+            transition: 0.3s;
+            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+        }
+
+        .instagram img:hover {
+            transform: scale(1.2);
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5em;
@@ -121,8 +123,8 @@
             }
 
             .instagram img {
-                width: 35px;
-                height: 35px;
+                width: 40px;
+                height: 40px;
             }
         }
     </style>
@@ -133,13 +135,13 @@
         <h1>Hola, ¿quieres saber qué tan pájaro eres?</h1>
         <button onclick="mostrarResultado()">QUIERO SABER</button>
         <div id="resultado" class="hidden result">WAOOO, ERES 100% PÁJARO</div>
-        
-        <!-- Ícono de Instagram -->
-        <div class="instagram">
-            <a href="https://www.instagram.com/jandepr" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-            </a>
-        </div>
+    </div>
+
+    <!-- Ícono de Instagram fijo en la parte inferior derecha -->
+    <div class="instagram">
+        <a href="https://www.instagram.com/jandepr" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        </a>
     </div>
 
     <script>

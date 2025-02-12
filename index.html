@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test JandePR</title>
+    <title>Test de Pájaro</title>
     <style>
         * {
             margin: 0;
@@ -20,6 +20,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            flex-direction: column;
         }
 
         .container {
@@ -108,6 +109,23 @@
             transform: scale(1.2);
         }
 
+        .minecraft-btn {
+            margin-top: 15px;
+            padding: 12px 20px;
+            font-size: 1em;
+            background: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .minecraft-btn:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5em;
@@ -126,6 +144,11 @@
                 width: 40px;
                 height: 40px;
             }
+
+            .minecraft-btn {
+                font-size: 0.9em;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -135,11 +158,12 @@
         <h1>Hola, ¿quieres saber qué tan pájaro eres?</h1>
         <button onclick="mostrarResultado()">QUIERO SABER</button>
         <div id="resultado" class="hidden result">WAOOO, ERES 100% PÁJARO</div>
+        <button class="minecraft-btn" onclick="conectarMinecraft()">🎮 UNIRME A UALAND</button>
     </div>
 
     <!-- Ícono de Instagram fijo en la parte inferior derecha -->
     <div class="instagram">
-        <a href="https://www.instagram.com/jandepr" target="_blank">
+        <a href="https://www.instagram.com/tu_usuario" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
         </a>
     </div>
@@ -157,6 +181,10 @@
                     resultado.style.animation = ""; // Restablecer animaciones
                 }, 1000);
             }, 5000);
+        }
+
+        function conectarMinecraft() {
+            window.location.href = "minecraft://?addExternalServer=UALAND|UALAND.HOLY.GG:25565";
         }
     </script>
 

@@ -1,202 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test de Pájaro</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(45deg, #ff6b6b, #f7b731);
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            flex-direction: column;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            max-width: 90%;
-        }
-
-        h1 {
-            font-size: 2em;
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 15px 20px;
-            font-size: 1.2em;
-            font-weight: bold;
-            border: none;
-            border-radius: 10px;
-            background: #ff4757;
-            color: white;
-            cursor: pointer;
-            transition: 0.3s;
-            width: 100%;
-            max-width: 300px;
-        }
-
-        button:hover {
-            background: #e84118;
-            transform: scale(1.05);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .result {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: white;
-            text-shadow: 3px 3px 10px black;
-            opacity: 0;
-            margin-top: 40px;
-            animation: fadeIn 1.5s ease-in-out forwards, zoom 1.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes zoom {
-            0% { transform: scale(0.5); }
-            100% { transform: scale(1.2); }
-        }
-
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
-        }
-
-        /* Ícono de Instagram */
-        .instagram {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
-
-        .instagram a {
-            text-decoration: none;
-        }
-
-        .instagram img {
-            width: 50px;
-            height: 50px;
-            transition: 0.3s;
-            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
-        }
-
-        .instagram img:hover {
-            transform: scale(1.2);
-        }
-
-        .minecraft-btn {
-            margin-top: 15px;
-            padding: 12px 20px;
-            font-size: 1em;
-            background: #4CAF50;
-            border: none;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .minecraft-btn:hover {
-            background: #45a049;
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.5em;
-            }
-
-            .result {
-                font-size: 2em;
-            }
-
-            button {
-                font-size: 1em;
-                padding: 12px;
-            }
-
-            .instagram img {
-                width: 40px;
-                height: 40px;
-            }
-
-            .minecraft-btn {
-                font-size: 0.9em;
-                padding: 10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test de Pájaro</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #ff6b6b, #f7b731);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      max-width: 90%;
+    }
+    h1 {
+      font-size: 2em;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    button,
+    .minecraft-btn,
+    .mods-btn {
+      margin-top: 20px;
+      padding: 15px 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+      max-width: 300px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    button {
+      background: #ff4757;
+      color: white;
+    }
+    button:hover {
+      background: #e84118;
+      transform: scale(1.05);
+    }
+    .minecraft-btn {
+      background: #4caf50;
+      color: white;
+      margin-top: 15px;
+    }
+    .minecraft-btn:hover {
+      background: #45a049;
+      transform: scale(1.05);
+    }
+    .mods-btn {
+      background: #3498db;
+      color: white;
+      margin-top: 10px;
+    }
+    .mods-btn:hover {
+      background: #2980b9;
+      transform: scale(1.05);
+    }
+    .hidden {
+      display: none;
+    }
+    .result {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: white;
+      text-shadow: 3px 3px 10px black;
+      opacity: 0;
+      margin-top: 40px;
+      animation: fadeIn 1.5s ease-in-out forwards, zoom 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes zoom {
+      0% {
+        transform: scale(0.5);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    /* Ícono de Instagram */
+    .instagram {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+    .instagram a {
+      text-decoration: none;
+    }
+    .instagram img {
+      width: 50px;
+      height: 50px;
+      transition: 0.3s;
+      filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+    }
+    .instagram img:hover {
+      transform: scale(1.2);
+    }
+    /* Recuadro con información del servidor */
+    .server-info {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      max-width: 90%;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+    .server-info p {
+      font-size: 1.2em;
+      color: white;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5em;
+      }
+      .result {
+        font-size: 2em;
+      }
+      button,
+      .minecraft-btn,
+      .mods-btn {
+        font-size: 1em;
+        padding: 12px;
+      }
+      .instagram img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Hola, ¿quieres saber qué tan pájaro eres?</h1>
+    <button onclick="mostrarResultado()">QUIERO SABER</button>
+    <div id="resultado" class="hidden result">WAOOO, ERES 100% PÁJARO</div>
+    <!-- Botón para abrir el launcher de Minecraft Java -->
+    <a
+      class="minecraft-btn"
+      href="minecraft-launcher://?addExternalServer=UALAND|UALAND.HOLY.GG"
+      target="_blank"
+      >🎮 UNIRME AL SERVER</a
+    >
+  </div>
 
-    <div class="container">
-        <h1>Hola, ¿quieres saber qué tan pájaro eres?</h1>
-        <button onclick="mostrarResultado()">QUIERO SABER</button>
-        <div id="resultado" class="hidden result">WAOOO, ERES 100% PÁJARO</div>
-        <button class="minecraft-btn" onclick="descargarLauncher()">🎮 UNIRME CON FORGE</button>
-    </div>
+  <!-- Recuadro con la información del servidor -->
+  <div class="server-info">
+    <p>IP del Servidor: <strong>UALAND.HOLY.GG</strong></p>
+    <a
+      class="mods-btn"
+      href="https://drive.google.com/drive/folders/17btPeAyUVnd4dKES1lhBNjvwPyeoafb5"
+      target="_blank"
+      >Carpeta de Mods</a
+    >
+  </div>
 
-    <!-- Ícono de Instagram fijo en la parte inferior derecha -->
-    <div class="instagram">
-        <a href="https://www.instagram.com/jandepr" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-        </a>
-    </div>
+  <!-- Ícono de Instagram fijo en la esquina inferior derecha -->
+  <div class="instagram">
+    <a href="https://www.instagram.com/jandepr" target="_blank">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+        alt="Instagram"
+      />
+    </a>
+  </div>
 
-    <script>
-        function mostrarResultado() {
-            let resultado = document.getElementById("resultado");
-            resultado.classList.remove("hidden");
+  <script>
+    function mostrarResultado() {
+      let resultado = document.getElementById("resultado");
+      resultado.classList.remove("hidden");
 
-            // Ocultar el resultado después de 5 segundos con animación
-            setTimeout(() => {
-                resultado.style.animation = "fadeOut 1s ease-in-out forwards";
-                setTimeout(() => {
-                    resultado.classList.add("hidden");
-                    resultado.style.animation = ""; // Restablecer animaciones
-                }, 1000);
-            }, 5000);
-        }
-
-        function descargarLauncher() {
-            // Crear un archivo .bat para abrir Minecraft con Forge y conectarse al servidor
-            let contenido = `@echo off
-            start "" "C:\\Program Files (x86)\\Minecraft Launcher\\MinecraftLauncher.exe" --workDir "C:\\Users\\%USERNAME%\\AppData\\Roaming\\.minecraft" --server UALAND.HOLY.GG --port 25565`;
-            
-            let blob = new Blob([contenido], { type: "text/plain" });
-            let link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "UALAND_Forge.bat";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
-
+      // Ocultar el resultado después de 5 segundos con animación
+      setTimeout(() => {
+        resultado.style.animation = "fadeOut 1s ease-in-out forwards";
+        setTimeout(() => {
+          resultado.classList.add("hidden");
+          resultado.style.animation = ""; // Restablecer animaciones
+        }, 1000);
+      }, 5000);
+    }
+  </script>
 </body>
 </html>

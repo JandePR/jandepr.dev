@@ -1,4 +1,114 @@
-<html>
-<head><title>Hola pájaro</title></head>
-<body><h1>Hola pájaro</h1></body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Pájaro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff6b6b, #f7b731);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 15px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background: #ff4757;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        button:hover {
+            background: #e84118;
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .result {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 10px black;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards, zoom 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoom {
+            0% { transform: scale(0.5); }
+            100% { transform: scale(1.2); }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .result {
+                font-size: 2em;
+            }
+
+            button {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hola, ¿quieres saber qué tan pájaro eres? Dale al botón siguiente</h1>
+        <button onclick="mostrarResultado()">Siguiente</button>
+        <div id="resultado" class="hidden result">WAOOO, ERES 100% PÁJARO</div>
+    </div>
+
+    <script>
+        function mostrarResultado() {
+            document.getElementById("resultado").classList.remove("hidden");
+        }
+    </script>
+
+</body>
 </html>

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test de Pájaro</title>
+    <title>UALAND3</title>
     <style>
         * {
             margin: 0;
@@ -80,6 +80,11 @@
             100% { transform: scale(1.2); }
         }
 
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5em;
@@ -99,14 +104,24 @@
 <body>
 
     <div class="container">
-        <h1>Hola, ¿quieres saber qué tan pájaro eres? Dale al botón siguiente</h1>
-        <button onclick="mostrarResultado()">Siguiente</button>
+        <h1>Hola, ¿quieres saber qué tan pájaro eres?</h1>
+        <button onclick="mostrarResultado()">QUIERO SABER</button>
         <div id="resultado" class="hidden result">WAOOO, ERES 100% PÁJARO</div>
     </div>
 
     <script>
         function mostrarResultado() {
-            document.getElementById("resultado").classList.remove("hidden");
+            let resultado = document.getElementById("resultado");
+            resultado.classList.remove("hidden");
+
+            // Ocultar el resultado después de 5 segundos con animación
+            setTimeout(() => {
+                resultado.style.animation = "fadeOut 1s ease-in-out forwards";
+                setTimeout(() => {
+                    resultado.classList.add("hidden");
+                    resultado.style.animation = ""; // Restablecer animaciones
+                }, 1000);
+            }, 5000);
         }
     </script>
 

@@ -158,7 +158,7 @@
         <h1>Hola, ¿quieres saber qué tan pájaro eres?</h1>
         <button onclick="mostrarResultado()">QUIERO SABER</button>
         <div id="resultado" class="hidden result">WAOOO, ERES 100% PÁJARO</div>
-        <button class="minecraft-btn" onclick="conectarMinecraft()">🎮 UNIRME A UALAND</button>
+        <button class="minecraft-btn" onclick="descargarLauncher()">🎮 UNIRME CON FORGE</button>
     </div>
 
     <!-- Ícono de Instagram fijo en la parte inferior derecha -->
@@ -183,8 +183,18 @@
             }, 5000);
         }
 
-        function conectarMinecraft() {
-            window.location.href = "minecraft://?addExternalServer=UALAND|UALAND.HOLY.GG:25565";
+        function descargarLauncher() {
+            // Crear un archivo .bat para abrir Minecraft con Forge y conectarse al servidor
+            let contenido = `@echo off
+            start "" "C:\\Program Files (x86)\\Minecraft Launcher\\MinecraftLauncher.exe" --workDir "C:\\Users\\%USERNAME%\\AppData\\Roaming\\.minecraft" --server UALAND.HOLY.GG --port 25565`;
+            
+            let blob = new Blob([contenido], { type: "text/plain" });
+            let link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "UALAND_Forge.bat";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 

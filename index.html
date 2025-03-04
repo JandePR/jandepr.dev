@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UA LAND 3</title>
   <style>
-    /* Reset básico */
-    * {
+   * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -67,7 +66,7 @@
       background: #2980b9;
       transform: scale(1.05);
     }
-    /* Estilo para los logos dentro de los botones */
+    
     .btn-logo {
       width: 24px;
       height: 24px;
@@ -110,7 +109,7 @@
         opacity: 0;
       }
     }
-    /* Ícono de Instagram */
+   
     .instagram {
       position: fixed;
       bottom: 20px;
@@ -128,7 +127,7 @@
     .instagram img:hover {
       transform: scale(1.2);
     }
-    /* Recuadro con información del servidor */
+    
     .server-info {
       background: rgba(255, 255, 255, 0.2);
       padding: 15px;
@@ -170,7 +169,7 @@
     <div id="resultado" class="hidden result">WAOOO, ERES 100% PÁJARO</div>
   </div>
 
-  <!-- Recuadro con la información del servidor -->
+  
   <div class="server-info">
     <p>IP del Servidor: <strong>UALAND.HOLY.GG</strong></p>
     <a class="mods-btn" href="https://drive.google.com/drive/folders/17btPeAyUVnd4dKES1lhBNjvwPyeoafb5" target="_blank">
@@ -183,7 +182,7 @@
     </a>
   </div>
 
-  <!-- Ícono de Instagram fijo en la esquina inferior derecha -->
+  
   <div class="instagram">
     <a href="https://www.instagram.com/jandepr" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
@@ -195,12 +194,12 @@
       let resultado = document.getElementById("resultado");
       resultado.classList.remove("hidden");
 
-      // Ocultar el resultado después de 5 segundos con animación
+      
       setTimeout(() => {
         resultado.style.animation = "fadeOut 1s ease-in-out forwards";
         setTimeout(() => {
           resultado.classList.add("hidden");
-          resultado.style.animation = ""; // Restablecer animaciones
+          resultado.style.animation = ""; 
         }, 1000);
       }, 5000);
     }
